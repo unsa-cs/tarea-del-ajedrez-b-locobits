@@ -2,6 +2,6 @@
 #include "figures.h"
 
 void display(){
-  char** cuadrado= whiteSquare;
+  char** cuadrado= repeatH(whiteSquare,8);
   interpreter(cuadrado);
 }
