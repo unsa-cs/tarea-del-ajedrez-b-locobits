@@ -1,12 +1,12 @@
 #include "chess.h"
 #include "figures.h"
-
+#include <stdlib.h>
 void display(){
-  char** line;
-
-  for(int i=0;i<4;i++){
-    line=join(reverse(whiteSquare),whiteSquare);
-  }
-  interpreter(line);
+  char** blanco = whiteSquare;
+  char** negro = reverse(blanco);
+  char** pair = join(negro, blanco);
+  interpreter(pair);
+  free(pair);
+  free(negro);
 }
 	
