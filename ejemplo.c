@@ -2,6 +2,6 @@
 #include "figures.h"
 
 void display(){
-  char** cuadrado= repeatH(whiteSquare,8);
-  interpreter(cuadrado);
+  char** blackKnight= reverse(knight);
+  interpreter(blackKnight);
 }
