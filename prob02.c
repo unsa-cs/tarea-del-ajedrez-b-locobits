@@ -1,17 +1,11 @@
 #include "chess.h"
 #include "figures.h"
 
-int  main(){
-	char* whiteSquare[]={
-		" ",
-		0
-	};
-	char* graySquare[]={
-		"##",
-		0
-	};
-	char** repeatSquares=repeatH(whiteSquare, 8);
-	interpreter(repeatSquares);
-	return 0;
+void display(){
+  char** whiteLine=repeatH(whiteSquare, 8);
+  for(int i=0;i<8;i+=2){
+    whiteLine[i]=reverse(whiteLine[i]);
+  }
+  interpreter(whiteLine);
 }
 	
