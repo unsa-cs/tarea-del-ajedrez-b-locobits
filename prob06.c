@@ -3,22 +3,24 @@
 #include <stdlib.h>
 void display () {
   char** arregloF[]={rook, knight, bishop, queen, king, bishop, knight, rook};
-  char** linea=superImpose(reverse(arregloF[0]),reverse(whiteSquare));
-	char** lineap= superImpose(reverse(pawn), whiteSquare);  
+  char** linea=superImpose(arregloF[0],reverse(whiteSquare));
+	char** lineap= superImpose(pawn, whiteSquare);  
 	for(int i=0;i<7;i++){
   	if(i%2==0){
-			linea=join(linea, superImpose(reverse(arregloF[i+1]), whiteSquare));
-			lineap=join(lineap, superImpose(reverse(pawn), reverse(whiteSquare)));
+			linea=join(linea, superImpose(arregloF[i+1], whiteSquare));
+			lineap=join(lineap, superImpose(pawn, reverse(whiteSquare)));
 		}
 		else{
-			linea= join(linea, superImpose(reverse(arregloF[i+1]), reverse(whiteSquare)));
-			lineap= join(lineap, superImpose(reverse(pawn), whiteSquare));
+			linea= join(linea, superImpose(arregloF[i+1], reverse(whiteSquare)));
+			lineap= join(lineap, superImpose(pawn, whiteSquare));
 		}
 	}
 	char** linean=up(linea, lineap);
-	interpreter(linean);
+	char** lineaflip=reverse(linean);
+	interpreter(lineaflip);
 	free(linea);
 	free(lineap);
 	free(linean);
+	free(lineaflip);
 } 
 
