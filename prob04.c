@@ -8,7 +8,7 @@ void display(){
   char** arregloF[]={rook, knight, bishop, queen, king, bishop, knight, rook};
   char** linea=superImpose(arregloF[0],reverse(whiteSquare));
   for(int i=0;i<7;i++){
-    linea = i%2==0 ? join(linea,whiteSquare) : join(linea,reverse(whiteSquare));
+    linea = i%2==0 ? join(linea,superImpose(arregloF[i+1],whiteSquare)) : join(linea,superImpose(arregloF[i+1],reverse(whiteSquare)));
   }
 
   interpreter(linea);
