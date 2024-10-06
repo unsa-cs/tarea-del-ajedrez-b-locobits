@@ -17,10 +17,12 @@ void display () {
 	}
 	char** linean=up(linea, lineap);
 	char** lineaflip=reverse(linean);
-	interpreter(lineaflip);
+	char** tablero=up(linean,lineap);
+	interpreter(tablero);
 	free(linea);
 	free(lineap);
 	free(linean);
 	free(lineaflip);
+	free(tablero);
 } 
 
