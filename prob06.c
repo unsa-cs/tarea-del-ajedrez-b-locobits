@@ -15,16 +15,18 @@ void display () {
 			lineap= join(lineap, superImpose(pawn, whiteSquare));
 		}
 	}
-  //lineas sin figuras 
+
+  char** lineaS=repeatH(repeatV(up(reverse(whiteSquare),whiteSquare),2),8);
 
 	char** linean=up(linea, lineap);
   char** lineaq=reverse(up(lineap, linea));
 	char** tablero=up(linean,rook);
-	interpreter(lineaq);
+	interpreter(lineaS);
 	free(linea);
 	free(lineap);
 	free(linean);
 	free(lineaq);
+  free(lineaS);
 	free(tablero);
 } 
 
