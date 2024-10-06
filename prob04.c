@@ -2,9 +2,6 @@
 #include "figures.h"
 #include <stdlib.h>
 void display(){
-  /*char** figure = knight;
-  char** square = whiteSquare;
-  char** prob = superImpose(figure,square);*/
   char** arregloF[]={rook, knight, bishop, queen, king, bishop, knight, rook};
   char** linea=superImpose(arregloF[0],reverse(whiteSquare));
   for(int i=0;i<7;i++){
