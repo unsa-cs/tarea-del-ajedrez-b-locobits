@@ -18,11 +18,14 @@ void display () {
 	char** linean=up(linea, lineap);
 	char** lineaflip=reverse(linean);
 	char** tablero=up(linean,rook);
+	char** flip=flipV(linean);
 	interpreter(tablero);
+	interpreter(flip);
 	free(linea);
 	free(lineap);
 	free(linean);
 	free(lineaflip);
 	free(tablero);
+	free(flip);
 } 
 
