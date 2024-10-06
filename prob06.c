@@ -18,7 +18,7 @@ void display () {
 	char** linean=up(linea, lineap);
 	char** lineaflip=reverse(linean);
 	char** tablero=up(linean,rook);
-	char** flip=flipV(linean);
+	char** flip=flipH(linean);
 	interpreter(flip);
 	free(linea);
 	free(lineap);
