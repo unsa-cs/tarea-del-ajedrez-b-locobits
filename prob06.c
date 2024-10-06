@@ -16,17 +16,21 @@ void display () {
 		}
 	}
 
-  char** lineaS=repeatH(repeatV(up(reverse(whiteSquare),whiteSquare),2),8);
+  char** columS=up(reverse(whiteSquare),whiteSquare);
+  char** rowS = repeatH(join(columS,reverse(columS)),4);
+  char** midBoard = repeatV(rowS,2);
 
-	char** linean=up(linea, lineap);
-  char** lineaq=reverse(up(lineap, linea));
-	char** tablero=up(linean,rook);
-	interpreter(lineaS);
+	char** lineaTop=up(linea, lineap);
+  char** lineaBot=reverse(up(lineap, linea));
+	char** tablero=up(lineaTop,(up(midBoard,lineaBot)));
+	interpreter(tablero);
 	free(linea);
 	free(lineap);
-	free(linean);
-	free(lineaq);
-  free(lineaS);
+	free(lineaTop);
+	free(lineaBot);
+  free(columS);
 	free(tablero);
+  free(rowS);
+  free(midBoard);
 } 
 
