@@ -15,10 +15,10 @@ void display () {
 			linea= join(linea, superImpose(reverse(arregloF[i+1]), reverse(whiteSquare)));
 			lineap= join(linea, superImpose(reverse(pawn), whiteSquare));
 		}
+	}
 	linea=up(linea, lineap);
 	interpreter(linea);
 	free(linea);
 	free(lineap);
-	} 
 } 
 
